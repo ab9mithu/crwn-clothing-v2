@@ -3,6 +3,8 @@ import Home from "./route/home/home.component";
 import Navigation from './route/home/navigation/navigation.component';
 import Authentication from './route/authentication/authentication.component';
 import Shop from './route/shop/shop.component';
+import Checkout from './route/checkout/checkout.component';
+
 
 
 
@@ -16,15 +18,13 @@ return(
 
  
   <Routes>
-    <Route path='/' element={<Navigation />}>
+       <Route path='/' element={<Navigation />}>
       <Route index element={ <Home />} />
-       <Route path='shop' element={<Shop />} />
+       <Route path='shop/*' element={<Shop />} />
        <Route path='auth' element={<Authentication />} />
-  </Route>
+       <Route path='checkout' element={<Checkout/>}/>
+   </Route>
   </Routes>
 )
 }
-      
-       
-
 export default App;

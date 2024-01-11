@@ -11,10 +11,10 @@ export const UserProvider=({children})=>{
     const [currentUser,setCurrentUser]=useState(null);
     const value={currentUser,setCurrentUser};
     
-
+// updates user sign ined or signed out
     useEffect(()=>{
         const unsubscribe = onAuthStateChangedListner((user)=>{
-            console.log(user)
+            
             if(user){
             createUserDocumentFromAuth(user);}
             setCurrentUser(user);
